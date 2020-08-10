@@ -29,3 +29,4 @@ git commit -m 'MISC: re-organizing repo for docker build'
 ## Reviewers
 - Each pull request should include a minimum of 2 reviewers
 - Reviewers should comment a minimum of 2 constructive sentences
+- Last reviewer should merge if everyone has approved changes
