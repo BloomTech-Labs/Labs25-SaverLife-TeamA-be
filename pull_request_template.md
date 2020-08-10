@@ -2,7 +2,7 @@
 
 - *Pull Request Rubric - [PR Rubric](https://www.notion.so/1fc04e4fedeb429ba873b7c68d281707?v=74054da7991341c0bf970f39410c43da)*
 
-- *Person who creates PR SHOULD NOT merge own pull request*
+- *Person who creates pull request SHOULD NOT merge own pull request*
 
 ## Formatting a pull request
 ADD image here ???
