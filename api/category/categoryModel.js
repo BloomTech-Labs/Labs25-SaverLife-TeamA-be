@@ -17,7 +17,7 @@ const create = async (category) => {
 };
 
 const update = (id, category) => {
-  console.log(category);
+//   console.log(category);
   return db('categories')
     .where({ id: id })
     .first()
