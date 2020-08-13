@@ -18,11 +18,7 @@ const create = async (budget) => {
 
 const update = (id, budget) => {
   console.log(budget);
-  return db('budgets')
-    .where({ id: id })
-    .first()
-    .update(budget)
-    .returning('*');
+  return db('budgets').where({ id: id }).first().update(budget).returning('*');
 };
 
 const remove = async (id) => {

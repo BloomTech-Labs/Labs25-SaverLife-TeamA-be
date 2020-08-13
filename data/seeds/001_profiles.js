@@ -20,15 +20,31 @@
 //     });
 // };
 
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('profiles').del()
+  return knex('profiles')
+    .del()
     .then(function () {
       // Inserts seed entries
       return knex('profiles').insert([
-        {id: 1, saving_target_amount: 400.00, time_unit: 'week', saverlife_profile_id: 247},
-        {id: 2, saving_target_amount: 750.00, time_unit: 'month', saverlife_profile_id: 2900},
-        {id: 3, saving_target_amount: 500.00, time_unit: 'year', saverlife_profile_id: 81}
+        {
+          id: 1,
+          saving_target_amount: 400.0,
+          time_unit: 'week',
+          saverlife_profile_id: 247,
+        },
+        {
+          id: 2,
+          saving_target_amount: 750.0,
+          time_unit: 'month',
+          saverlife_profile_id: 2900,
+        },
+        {
+          id: 3,
+          saving_target_amount: 500.0,
+          time_unit: 'year',
+          saverlife_profile_id: 81,
+        },
       ]);
     });
 };

@@ -10,9 +10,9 @@ module.exports = {
     seeds: { directory: '../data/seeds' },
     pool: {
       afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done) // enables foreign key functionality in our database
+        conn.run('PRAGMA foreign_keys = ON', done); // enables foreign key functionality in our database
       },
-    }
+    },
   },
   test: {
     client: 'pg',
@@ -29,8 +29,8 @@ module.exports = {
     seeds: { directory: '../data/seeds' },
     pool: {
       afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done) // enables foreign key functionality in our database
-      }
-    }
+        conn.run('PRAGMA foreign_keys = ON', done); // enables foreign key functionality in our database
+      },
+    },
   },
 };
