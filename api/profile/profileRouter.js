@@ -68,7 +68,7 @@ router.get('/', authRequired, function (req, res) {
       res.status(200).json(profiles);
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
       res.status(500).json({ message: err.message });
     });
 });
@@ -177,7 +177,7 @@ router.post('/', authRequired, async (req, res) => {
         }
       });
     } catch (e) {
-      console.error(e);
+      // console.error(e);
       res.status(500).json({ message: e.message });
     }
   } else {
