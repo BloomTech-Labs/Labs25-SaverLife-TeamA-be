@@ -1,4 +1,5 @@
 var express = require('express');
+var cors = require('cors');
 var router = express.Router();
 
 /**
@@ -24,7 +25,7 @@ var router = express.Router();
  *                  type: boolean
  *                  example: true
  */
-router.get('/', function (req, res) {
+router.get('/', cors() function (req, res) {
   res.status(200).json({ api: 'up', timestamp: Date.now() });
 });
 
