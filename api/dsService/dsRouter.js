@@ -120,7 +120,7 @@ router.get('/viz/:state', authRequired, function (req, res) {
 router.get(`/moneyflow/`, function (req, res) {
   dsModel
     .getMoneyFlow(req.body.user_ID, req.body.time_period)
-      .then((response) => {
+    .then((response) => {
       res.status(200).json(response.data);
     })
     .catch((error) => {
