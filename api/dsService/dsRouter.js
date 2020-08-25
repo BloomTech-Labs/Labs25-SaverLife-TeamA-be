@@ -117,6 +117,18 @@ router.get('/viz/:state', authRequired, function (req, res) {
     });
 });
 
+router.get(`/moneyflow/`, function (req, res) {
+  dsModel
+    .getMoneyFlow(req.body.user_ID, req.body.time_period)
+    .then((response) => {
+      res.status(200).json(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json(error);
+    });
+});
+
 router.post('/spending', function (req, res) {
   dsModel
     .getSpending(req.body.user_ID, req.body.graph_type, req.body.time_period)
