@@ -11,7 +11,6 @@ const getViz = (state) => {
 };
 
 const getMoneyFlow = (user_ID, time_period) => {
-  const input = { user_ID, time_period };
   return dsClient.post(`/moneyflow`, { user_ID, time_period });
 };
 
