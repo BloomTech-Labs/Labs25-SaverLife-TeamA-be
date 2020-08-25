@@ -120,13 +120,13 @@ router.get('/viz/:state', authRequired, function (req, res) {
 router.post('/spending', function (req, res) {
   dsModel
     .getSpending(req.body.user_ID, req.body.graph_type, req.body.time_period)
-    .then(response => {
-      res.status(200).json(response.data)
+    .then((response) => {
+      res.status(200).json(response.data);
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(error);
       res.status(500).json(error);
-    })
-})
+    });
+});
 
 module.exports = router;
