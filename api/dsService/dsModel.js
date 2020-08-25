@@ -14,4 +14,8 @@ const getMoneyFlow = (user_ID, time_period) => {
   return dsClient.post(`/moneyflow`, { user_ID, time_period });
 };
 
-module.exports = { getPrediction, getViz, getMoneyFlow };
+const getSpending = (user_ID, graph_type, time_period) => {
+  return dsClient.post('/spending', { user_ID, graph_type, time_period });
+};
+
+module.exports = { getPrediction, getViz, getMoneyFlow, getSpending };
