@@ -11,9 +11,9 @@ const getViz = (state) => {
 };
 
 const getMoneyFlow = (user_ID, time_period) => {
-  const input = {user_ID, time_period};
-  console.log(input)
+  const input = { user_ID, time_period };
+  console.log(input);
   return dsClient.post(`/moneyflow`, { user_ID, time_period });
-}
+};
 
 module.exports = { getPrediction, getViz, getMoneyFlow };

@@ -117,18 +117,17 @@ router.get('/viz/:state', authRequired, function (req, res) {
     });
 });
 
-
 router.get(`/moneyflow/`, function (req, res) {
-  console.log(`req body: ${req.body.user_ID}`)
-  console.log(`String(req.body.user_id): ${String(req.body.user_ID)}`)
+  console.log(`req body: ${req.body.user_ID}`);
+  console.log(`String(req.body.user_id): ${String(req.body.user_ID)}`);
   dsModel
     .getMoneyFlow(req.body.user_ID, req.body.time_period)
     .then((response) => {
       res.status(200).json(response.data);
     })
     .catch((error) => {
-      console.log(error)
-      res.status(500).json(error)
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
