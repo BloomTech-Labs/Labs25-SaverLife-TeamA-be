@@ -60,7 +60,7 @@ const authRequired = require('../middleware/authRequired');
  *      500:
  *        description: 'Error making prediction'
  */
-router.get('/predict/:x1/:x2/:3', authRequired, function (req, res) {
+router.get('/predict/:x1/:x2/:x3', function (req, res) {
   const x1 = String(req.params.x1);
   const x2 = String(req.params.x2);
   const x3 = String(req.params.x3);
@@ -114,6 +114,21 @@ router.get('/viz/:state', authRequired, function (req, res) {
     .catch((error) => {
       console.error(error);
       res.status(500).json(error);
+    });
+});
+
+
+router.get(`/moneyflow/`, function (req, res) {
+  console.log(`req body: ${req.body.user_ID}`)
+  console.log(`String(req.body.user_id): ${String(req.body.user_ID)}`)
+  dsModel
+    .getMoneyFlow(req.body.user_ID, req.body.time_period)
+    .then((response) => {
+      res.status(200).json(response.data);
+    })
+    .catch((error) => {
+      console.log(error)
+      res.status(500).json(error)
     });
 });
 
