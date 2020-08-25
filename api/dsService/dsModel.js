@@ -10,4 +10,8 @@ const getViz = (state) => {
   return dsClient.get(`/viz/${state}`);
 };
 
-module.exports = { getPrediction, getViz };
+const getSpending = (user_ID, graph_type, time_period) => {
+  return dsClient.post('/spending', { user_ID, graph_type, time_period });
+};
+
+module.exports = { getPrediction, getViz, getSpending };
