@@ -143,7 +143,11 @@ router.post('/spending', function (req, res) {
 
 router.post('/future_budget', function (req, res) {
   dsModel
-    .getFutureBudget( req.body.user_id, req.body.monthly_savings_goal, req.body.placeholder)
+    .getFutureBudget(
+      req.body.user_id,
+      req.body.monthly_savings_goal,
+      req.body.placeholder
+    )
     .then((response) => {
       res.status(200).json(response.data);
     })
