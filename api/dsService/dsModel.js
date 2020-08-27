@@ -10,12 +10,12 @@ const getViz = (state) => {
   return dsClient.get(`/viz/${state}`);
 };
 
-const getSpending = (user_ID, graph_type, time_period) => {
-  return dsClient.post('/spending', { user_ID, graph_type, time_period });
+const getMoneyFlow = (user_ID, time_period) => {
+  return dsClient.post(`/moneyflow`, { user_ID, time_period });
 };
 
-const getMoneyFlow = (user_ID, time_period) => {
-  return dsClient.post('/moneyflow', { user_ID, time_period });
+const getSpending = (user_ID, graph_type, time_period) => {
+  return dsClient.post('/spending', { user_ID, graph_type, time_period });
 };
 
 const getFutureBudget = (user_id, monthly_savings_goal, placeholder) => {
