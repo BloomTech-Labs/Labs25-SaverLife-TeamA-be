@@ -112,19 +112,19 @@ router.get('/viz/:state', authRequired, function (req, res) {
       res.status(200).json(response.data);
     })
     .catch((error) => {
-      console.error(error);
+      // console.error(error);
       res.status(500).json(error);
     });
 });
 
-router.get(`/moneyflow/`, function (req, res) {
+router.post('/moneyflow', function (req, res) {
   dsModel
     .getMoneyFlow(req.body.user_ID, req.body.time_period)
     .then((response) => {
       res.status(200).json(response.data);
     })
     .catch((error) => {
-      console.error(error);
+      // console.error(error);
       res.status(500).json(error);
     });
 });
@@ -136,7 +136,36 @@ router.post('/spending', function (req, res) {
       res.status(200).json(response.data);
     })
     .catch((error) => {
-      console.error(error);
+      // console.error(error);
+      res.status(500).json(error);
+    });
+});
+
+router.post('/future_budget', function (req, res) {
+  dsModel
+    .getFutureBudget(
+      req.body.user_id,
+      req.body.monthly_savings_goal,
+      req.body.placeholder
+    )
+    .then((response) => {
+      res.status(200).json(response.data);
+    })
+    .catch((error) => {
+      // console.error(error);
+      res.status(500).json(error);
+    });
+});
+
+router.get('/current_month_spending/:user_id', function (req, res) {
+  // console.log('Params: ', req.params)
+  dsModel
+    .getCurrentMonthSpending(req.params.user_id)
+    .then((response) => {
+      res.status(200).json(response.data);
+    })
+    .catch((error) => {
+      // console.error(error);
       res.status(500).json(error);
     });
 });

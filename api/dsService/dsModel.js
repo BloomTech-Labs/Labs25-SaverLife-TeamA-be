@@ -18,4 +18,23 @@ const getSpending = (user_ID, graph_type, time_period) => {
   return dsClient.post('/spending', { user_ID, graph_type, time_period });
 };
 
-module.exports = { getPrediction, getViz, getMoneyFlow, getSpending };
+const getFutureBudget = (user_id, monthly_savings_goal, placeholder) => {
+  return dsClient.post('/future_budget', {
+    user_id,
+    monthly_savings_goal,
+    placeholder,
+  });
+};
+
+const getCurrentMonthSpending = (user_id) => {
+  return dsClient.get(`/current_month_spending?user_id=${user_id}`);
+};
+
+module.exports = {
+  getPrediction,
+  getViz,
+  getSpending,
+  getMoneyFlow,
+  getFutureBudget,
+  getCurrentMonthSpending,
+};
