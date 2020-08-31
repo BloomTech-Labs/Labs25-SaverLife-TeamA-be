@@ -7,6 +7,7 @@ exports.up = function (knex) {
         table.decimal('saving_target_amount');
         table.string('time_unit', 20).notNullable();
         table.integer('saverlife_profile_id').unsigned().notNullable().unique();
+        table.string('test_user', 50);
       })
       .createTable('budgets', function (table) {
         table.increments();
