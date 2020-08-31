@@ -29,21 +29,25 @@ exports.seed = function (knex) {
       return knex('profiles').insert([
         {
           id: 1,
+
           saving_target_amount: 400.0,
           time_unit: 'week',
           saverlife_profile_id: 247,
+          test_user: 'llama001@maildrop.cc',
         },
         {
           id: 2,
           saving_target_amount: 750.0,
           time_unit: 'month',
           saverlife_profile_id: 2900,
+          test_user: 'llama002@maildrop.cc',
         },
         {
           id: 3,
           saving_target_amount: 500.0,
           time_unit: 'year',
           saverlife_profile_id: 81,
+          test_user: 'llama003@maildrop.cc',
         },
       ]);
     });
