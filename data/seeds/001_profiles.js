@@ -29,7 +29,6 @@ exports.seed = function (knex) {
       return knex('profiles').insert([
         {
           id: 1,
-
           saving_target_amount: 400.0,
           time_unit: 'week',
           saverlife_profile_id: 247,
