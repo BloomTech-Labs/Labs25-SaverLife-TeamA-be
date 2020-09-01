@@ -8,11 +8,11 @@ module.exports = {
     useNullAsDefault: true,
     migrations: { directory: '../data/migrations' },
     seeds: { directory: '../data/seeds' },
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done); // enables foreign key functionality in our database
-      },
-    },
+    // pool: {
+    //   afterCreate: (conn, cb) => {
+    //     conn.run('PRAGMA foreign_keys = ON', cb)
+    //   },
+    // },
   },
   test: {
     client: 'pg',
@@ -27,10 +27,10 @@ module.exports = {
     useNullAsDefault: true,
     migrations: { directory: '../data/migrations' },
     seeds: { directory: '../data/seeds' },
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done); // enables foreign key functionality in our database
-      },
-    },
+    // pool: {
+    //   afterCreate: (conn, cb) => {
+    //     conn.run('PRAGMA foreign_keys = ON', cb)
+    //   },
+    // },
   },
 };
