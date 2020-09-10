@@ -29,21 +29,24 @@ exports.seed = function (knex) {
       return knex('profiles').insert([
         {
           id: 1,
-          saving_target_amount: 400.0,
-          time_unit: 'week',
-          saverlife_profile_id: 247,
+          income: 50000.00,
+          address: '',
+          email: 'llama001@maildrop.cc',
+          saverlife_profile_username: 'mEQmv8ybP1t3o3bYnKzwFqP5jad1KKUM8N06o',
         },
         {
           id: 2,
-          saving_target_amount: 750.0,
-          time_unit: 'month',
-          saverlife_profile_id: 2900,
+          income: 50000.00,
+          address: '',
+          email: 'llama002@maildrop.cc',
+          saverlife_profile_username: 'vq4mMRdZLeFon7bK63jefLOomaRPYBCmAJP6g',
         },
         {
           id: 3,
-          saving_target_amount: 500.0,
-          time_unit: 'year',
-          saverlife_profile_id: 81,
+          income: 50000.00,
+          address: '',
+          email: 'llama003@maildrop.cc',
+          saverlife_profile_username: 'ojQ7ZARMD3HvOxe0AM7ZfgqByxymNgcBdErKK',
         },
       ]);
     });

@@ -4,8 +4,9 @@ exports.up = function (knex) {
       // .raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"')
       .createTable('profiles', function (table) {
         table.increments();
-        table.decimal('saving_target_amount');
-        table.string('time_unit', 20).notNullable();
+        table.decimal('income').unsigned()
+        table.string('address', 60);
+        table.string('email', 100)
         table.integer('saverlife_profile_id').unsigned().notNullable().unique();
       })
       .createTable('budgets', function (table) {
