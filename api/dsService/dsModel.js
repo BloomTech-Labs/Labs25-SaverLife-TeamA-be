@@ -13,7 +13,7 @@ const getUserByEmail = async (useremail) => {
 const getMoneyFlow = async (user_ID, time_period) => {
   return getUserByEmail(user_ID).then(async (user) => {
     return await dsClient.post(`/moneyflow`, {
-      user_ID: user.saverlife_profile_username,
+      bank_account_id: user.bank_account_id,
       time_period,
     });
   });
@@ -22,7 +22,7 @@ const getMoneyFlow = async (user_ID, time_period) => {
 const getSpending = async (user_ID, graph_type, time_period) => {
   return getUserByEmail(user_ID).then(async (user) => {
     return await dsClient.post('/spending', {
-      user_ID: user.saverlife_profile_username,
+      bank_account_id: user.bank_account_id,
       graph_type,
       time_period,
     });
@@ -32,7 +32,7 @@ const getSpending = async (user_ID, graph_type, time_period) => {
 const getFutureBudget = async (user_id, monthly_savings_goal, placeholder) => {
   return getUserByEmail(user_id).then(async (user) => {
     return dsClient.post('/future_budget', {
-      user_id: user.saverlife_profile_username,
+      bank_account_id: user.bank_account_id,
       monthly_savings_goal,
       placeholder,
     });
@@ -41,8 +41,9 @@ const getFutureBudget = async (user_id, monthly_savings_goal, placeholder) => {
 
 const getCurrentMonthSpending = async (user_id) => {
   return getUserByEmail(user_id).then(async (user) => {
+    console.log(user.bank_account_id)
     return dsClient.get(
-      `/current_month_spending?user_id=${user.saverlife_profile_username}`
+      `/current_month_spending/${user.bank_account_id}`
     );
   });
 };
