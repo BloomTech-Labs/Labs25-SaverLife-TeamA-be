@@ -29,7 +29,7 @@ exports.seed = function (knex) {
       return knex('profiles').insert([
         {
           id: 1,
-          income: 50000.00,
+          income: 50000.0,
           address: '',
           bank_account_id: 183004,
           email: 'llama001@maildrop.cc',
@@ -37,7 +37,7 @@ exports.seed = function (knex) {
         },
         {
           id: 2,
-          income: 50000.00,
+          income: 50000.0,
           address: '',
           bank_account_id: 204390,
           email: 'llama002@maildrop.cc',
@@ -45,7 +45,7 @@ exports.seed = function (knex) {
         },
         {
           id: 3,
-          income: 50000.00,
+          income: 50000.0,
           address: '',
           bank_account_id: 191721,
           email: 'llama003@maildrop.cc',

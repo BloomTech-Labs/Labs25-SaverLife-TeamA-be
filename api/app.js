@@ -21,8 +21,6 @@ const swaggerUIOptions = {
 //###[  Routers ]###
 const indexRouter = require('./index/indexRouter');
 const profileRouter = require('./profile/profileRouter');
-const budgetRouter = require('./budget/budgetRouter');
-const categoryRouter = require('./category/categoryRouter');
 const dsRouter = require('./dsService/dsRouter');
 
 const app = express();
