@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const dsModel = require('./dsModel');
-const authRequired = require('../middleware/authRequired');
+// const authRequired = require('../middleware/authRequired');
 
 /**
  * @swagger
@@ -144,10 +144,7 @@ router.post('/future_budget', function (req, res) {
     });
 });
 
-router.get('/current_month_spending/:user_id', function (
-  req,
-  res
-) {
+router.get('/current_month_spending/:user_id', function (req, res) {
   // console.log('Params: ', req.params)
   dsModel
     .getCurrentMonthSpending(req.params.user_id)

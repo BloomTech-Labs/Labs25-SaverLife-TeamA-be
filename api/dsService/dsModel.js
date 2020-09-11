@@ -41,10 +41,8 @@ const getFutureBudget = async (user_id, monthly_savings_goal, placeholder) => {
 
 const getCurrentMonthSpending = async (user_id) => {
   return getUserByEmail(user_id).then(async (user) => {
-    console.log(user.bank_account_id)
-    return dsClient.get(
-      `/current_month_spending/${user.bank_account_id}`
-    );
+    console.log(user.bank_account_id);
+    return dsClient.get(`/current_month_spending/${user.bank_account_id}`);
   });
 };
 
