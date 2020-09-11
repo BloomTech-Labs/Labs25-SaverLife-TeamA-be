@@ -60,21 +60,21 @@ const authRequired = require('../middleware/authRequired');
  *      500:
  *        description: 'Error making prediction'
  */
-router.get('/predict/:x1/:x2/:x3', authRequired, function (req, res) {
-  const x1 = String(req.params.x1);
-  const x2 = String(req.params.x2);
-  const x3 = String(req.params.x3);
+// router.get('/predict/:x1/:x2/:x3', authRequired, function (req, res) {
+//   const x1 = String(req.params.x1);
+//   const x2 = String(req.params.x2);
+//   const x3 = String(req.params.x3);
 
-  dsModel
-    .getPrediction(x1, x2, x3)
-    .then((response) => {
-      res.status(200).json(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).json(error);
-    });
-});
+//   dsModel
+//     .getPrediction(x1, x2, x3)
+//     .then((response) => {
+//       res.status(200).json(response.data);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//       res.status(500).json(error);
+//     });
+// });
 
 /**
  * @swagger
@@ -103,21 +103,8 @@ router.get('/predict/:x1/:x2/:x3', authRequired, function (req, res) {
  *      500:
  *        description: 'Error making prediction'
  */
-router.get('/viz/:state', authRequired, function (req, res) {
-  const state = String(req.params.state);
 
-  dsModel
-    .getViz(state)
-    .then((response) => {
-      res.status(200).json(response.data);
-    })
-    .catch((error) => {
-      // console.error(error);
-      res.status(500).json(error);
-    });
-});
-
-router.post('/moneyflow', function (req, res) {
+router.post('/moneyflow', authRequired, function (req, res) {
   dsModel
     .getMoneyFlow(req.body.user_ID, req.body.time_period)
     .then((response) => {
@@ -129,7 +116,7 @@ router.post('/moneyflow', function (req, res) {
     });
 });
 
-router.post('/spending', function (req, res) {
+router.post('/spending', authRequired, function (req, res) {
   dsModel
     .getSpending(req.body.user_ID, req.body.graph_type, req.body.time_period)
     .then((response) => {
@@ -141,7 +128,7 @@ router.post('/spending', function (req, res) {
     });
 });
 
-router.post('/future_budget', function (req, res) {
+router.post('/future_budget', authRequired, function (req, res) {
   dsModel
     .getFutureBudget(
       req.body.user_id,
@@ -157,7 +144,10 @@ router.post('/future_budget', function (req, res) {
     });
 });
 
-router.get('/current_month_spending/:user_id', function (req, res) {
+router.get('/current_month_spending/:user_id', authRequired, function (
+  req,
+  res
+) {
   // console.log('Params: ', req.params)
   dsModel
     .getCurrentMonthSpending(req.params.user_id)
