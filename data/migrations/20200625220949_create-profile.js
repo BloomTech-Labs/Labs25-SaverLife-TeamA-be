@@ -18,5 +18,8 @@ exports.up = function (knex) {
 };
 
 exports.down = function (knex) {
-  return knex.schema.dropTableIfExists('profiles');
+  return knex.schema
+    .dropTableIfExists('categories')
+    .dropTableIfExists('budgets')
+    .dropTableIfExists('profiles');
 };
