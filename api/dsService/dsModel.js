@@ -10,14 +10,6 @@ const getUserByEmail = async (useremail) => {
     .first();
 };
 
-const getPrediction = (x1, x2, x3) => {
-  return dsClient.post('/predict', { x1, x2, x3 });
-};
-
-const getViz = (state) => {
-  return dsClient.get(`/viz/${state}`);
-};
-
 const getMoneyFlow = async (user_ID, time_period) => {
   return getUserByEmail(user_ID).then(async (user) => {
     return await dsClient.post(`/moneyflow`, {
@@ -56,8 +48,6 @@ const getCurrentMonthSpending = async (user_id) => {
 };
 
 module.exports = {
-  getPrediction,
-  getViz,
   getSpending,
   getMoneyFlow,
   getFutureBudget,
