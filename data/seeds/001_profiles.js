@@ -31,6 +31,7 @@ exports.seed = function (knex) {
           id: 1,
           income: 50000.00,
           address: '',
+          bank_account_id: 183004,
           email: 'llama001@maildrop.cc',
           saverlife_profile_username: 'mEQmv8ybP1t3o3bYnKzwFqP5jad1KKUM8N06o',
         },
@@ -38,15 +39,17 @@ exports.seed = function (knex) {
           id: 2,
           income: 50000.00,
           address: '',
+          bank_account_id: 204390,
           email: 'llama002@maildrop.cc',
-          saverlife_profile_username: 'vq4mMRdZLeFon7bK63jefLOomaRPYBCmAJP6g',
+          saverlife_profile_username: 'X1VPwkEJAzHBEaByOrmDHMoDQEJO5ws4OnkXy',
         },
         {
           id: 3,
           income: 50000.00,
           address: '',
+          bank_account_id: 191721,
           email: 'llama003@maildrop.cc',
-          saverlife_profile_username: 'ojQ7ZARMD3HvOxe0AM7ZfgqByxymNgcBdErKK',
+          saverlife_profile_username: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
         },
       ]);
     });
