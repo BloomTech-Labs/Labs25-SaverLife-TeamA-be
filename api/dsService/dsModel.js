@@ -4,11 +4,18 @@ const dsClient = axios.create(dsConfig);
 const db = require('../../data/db-config');
 
 const getUserByEmail = async (useremail) => {
-  console.log(useremail);
   return db('profiles')
     .where({ email: `${useremail}` })
     .first();
 };
+
+const categoriesString = (categories) => {
+  let output = ''
+  categories.forEach(category => {
+    output += `&categories=${category}`
+  })
+  return output.substring(1)
+}
 
 const getMoneyFlow = async (user_ID, time_period) => {
   return getUserByEmail(user_ID).then(async (user) => {
@@ -39,10 +46,9 @@ const getFutureBudget = async (user_id, monthly_savings_goal, placeholder) => {
   });
 };
 
-const getCurrentMonthSpending = async (user_id) => {
+const getCurrentMonthSpending = async (user_id, categories) => {
   return getUserByEmail(user_id).then(async (user) => {
-    console.log(user.bank_account_id);
-    return dsClient.get(`/current_month_spending/${user.bank_account_id}`);
+    return dsClient.get(`/current_month_spending/${user.bank_account_id}?${categoriesString(categories)}`);
   });
 };
 
