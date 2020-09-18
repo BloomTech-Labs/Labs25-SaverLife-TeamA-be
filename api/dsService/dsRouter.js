@@ -144,10 +144,9 @@ router.post('/future_budget', function (req, res) {
     });
 });
 
-router.get('/current_month_spending/:user_id', function (req, res) {
-  // console.log('Params: ', req.params)
+router.post('/current_month_spending/:user_id', function (req, res) {
   dsModel
-    .getCurrentMonthSpending(req.params.user_id)
+    .getCurrentMonthSpending(req.params.user_id, req.body.categories)
     .then((response) => {
       res.status(200).json(response.data);
     })
