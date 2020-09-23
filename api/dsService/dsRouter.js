@@ -156,4 +156,15 @@ router.post('/current_month_spending/:user_id', function (req, res) {
     });
 });
 
+router.get('/dashboard/:user_id', function (req, res) {
+  dsModel
+    .getDashboard(req.params.user_id)
+    .then((response) => {
+      res.status(200).json(response.data);
+    })
+    .catch((error) => {
+      res.status(500).json(error);
+    });
+});
+
 module.exports = router;
