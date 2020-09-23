@@ -43,7 +43,7 @@ exports.seed = function (knex) {
           id: 2,
           income: 0,
           address: '',
-          bank_account_id: 204390,
+          bank_account_id: 74883,
           color_schema: 'blue',
           spending_bar_time_period: 'week',
           net_income_time_period: 'month',
