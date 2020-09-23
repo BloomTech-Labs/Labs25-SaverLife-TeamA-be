@@ -56,9 +56,16 @@ const getCurrentMonthSpending = async (user_id, categories) => {
   });
 };
 
+const getDashboard = async (user_id) => {
+  return getUserByEmail(user_id).then(async (user) => {
+    return dsClient.get(`/dashboard/${user.bank_account_id}`);
+  });
+};
+
 module.exports = {
   getSpending,
   getMoneyFlow,
   getFutureBudget,
   getCurrentMonthSpending,
+  getDashboard,
 };
