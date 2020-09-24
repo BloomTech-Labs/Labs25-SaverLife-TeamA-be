@@ -3,7 +3,7 @@
 ![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
 
 # SaverLife
-This repo contains a Node.js backend which is part of a financial tracker app built for the non-profit organization SaverLife. The app is also comprise dof a React/Redux frontend application [(repo)](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamA-fe), a Data Science backend [(repo)](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamA-ds), and a React Native frontend that's being finalized.
+This repo contains a Node.js backend which is part of a financial tracker app built for the non-profit organization SaverLife, which can be located at https://a.saverlife.dev. The app is also comprise dof a React/Redux frontend application [(repo)](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamA-fe), a Data Science backend [(repo)](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamA-ds), and a React Native frontend that's being finalized.
 You can find the frontend deployed using AWS Amplify [here](https://a.saverlife.dev), the backend deployed using Heroku [here](https://saverlife-a-api.herokuapp.com/), and the DS API deployed using AWS Elastic Beanstalk [here](http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/).
 
 ## Contributors
@@ -15,6 +15,53 @@ You can find the frontend deployed using AWS Amplify [here](https://a.saverlife.
 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/aurelio-arcabascio/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/mcdelamora/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/juan-gerardo-madero-flores/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/evan-aspaas-a80259198/)                 |
 
 <br>
+
+## Endpoints
+
+Most of the endpoints are used to enable our frontend application's test users to reach the data science API by retreiving a some information that the frontend doesn't have access to, but which the DS API is expecting. Specifically, this backend's database retrieves a bank account number that has been paired up with each test user then passes along the API request to the DS API, and returns the response returned by the DS API to the frontend to display.
+
+All routes to this backend have the base url: https://saverlife-a-api.herokuapp.com/ and has the DS API's base url as an environment variable: http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/
+
+#### GET /data/dashboard/:user_id
+
+Returns basic bank account information such as transactions and account type, which is displayed on the user's dashboard page on the frontend side.
+
+#### POST /data/current_month_spending/:user_id
+
+Returns the stringlified JSON for a Plotly library chart that displays the user's current month's spending broken down by categories. The incoming request must include an array of the existing categories which are provided by the future_budget endpoint shown below and therefore should be called after calling the future_budget endpoint:
+
+{
+    "categories": ["Food", "Shopping", "Transportation", "Utilities", "Misc."]
+}
+
+#### POST /data/future_budget
+
+Returns the user's recommended level of spending for each spending category which applies to them. The incoming request must include a user id which is the email that the user logs into the frontend site with (using Okta), the user's monthly savings goal, and a placeholder. Both this and the current_monthly_spending endpoint described above retrieve the information necessary to 
+
+{
+    "user_id": "llama003@maildrop.cc",
+    "monthly_savings_goal": 100,
+    "placeholder": "banjo"
+}
+
+#### POST /data/spending
+
+Returns the stringlified JSON for a Plotly library chart that displays the user's previous spending broken down by categories for the last week, month, or year. The incoming request must include a user id which is the email that the user logs into the frontend site with (using Okta), the graph type which can be 'bar' or 'pie' (both can be found displayed on the Past Spending page of the frontend application, and a time period which can be week, month or year.
+
+{
+    "user_ID": "llama003@maildrop.cc",
+    "graph_type": "pie",
+    "time_period": "month"
+}
+
+#### POST /data/moneyflow
+
+Returns the stringlified JSON for a Plotly library chart that displays the user's daily net income. The incoming request must include a user id which is the email that the user logs into the frontend site with (using Okta) and a time period which can be week, month or year.
+
+{
+	"user_ID": "llama002@maildrop.cc",
+    "time_period": "week"
+}
 
 # Basic node API
 
