@@ -29,39 +29,33 @@ exports.seed = function (knex) {
       return knex('profiles').insert([
         {
           id: 1,
-          income: 0,
-          address: '',
           bank_account_id: 183004,
           color_schema: 'green',
           spending_bar_time_period: 'week',
           net_income_time_period: 'month',
           spending_graph_type: 'pie',
           email: 'llama001@maildrop.cc',
-          saverlife_profile_username: 'mEQmv8ybP1t3o3bYnKzwFqP5jad1KKUM8N06o',
+          dark_mode_enabled: true
         },
         {
           id: 2,
-          income: 0,
-          address: '',
           bank_account_id: 74883,
           color_schema: 'blue',
           spending_bar_time_period: 'week',
           net_income_time_period: 'month',
           spending_graph_type: 'pie',
           email: 'llama002@maildrop.cc',
-          saverlife_profile_username: 'X1VPwkEJAzHBEaByOrmDHMoDQEJO5ws4OnkXy',
+          dark_mode_enabled: false
         },
         {
           id: 3,
-          income: 0,
-          address: '',
-          bank_account_id: 191721,
+          bank_account_id: 175698,
           color_schema: 'purple',
           spending_bar_time_period: 'week',
           net_income_time_period: 'month',
           spending_graph_type: 'pie',
           email: 'llama003@maildrop.cc',
-          saverlife_profile_username: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+          dark_mode_enabled: true
         },
       ]);
     });
