@@ -1,10 +1,25 @@
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
+![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
+
+# SaverLife
+This repo contains a Node.js backend which is part of a financial tracker app built for the non-profit organization SaverLife. The app is also comprise dof a React/Redux frontend application [(repo)](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamA-fe), a Data Science backend [(repo)](https://github.com/Lambda-School-Labs/Labs25-SaverLife-TeamA-ds), and a React Native frontend that's being finalized.
+You can find the frontend deployed using AWS Amplify [here](https://a.saverlife.dev), the backend deployed using Heroku [here](https://saverlife-a-api.herokuapp.com/), and the DS API deployed using AWS Elastic Beanstalk [here](http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/).
+
+## Contributors
+
+|                                                      [Aurelio Arcabascio](https://github.com/aurelio4)                                                       |                                                       [Manuel De La Mora](https://github.com/redpage001)                                                        |                                                      [Juan Madero Flores](https://github.com/jmadflo)                                                       |                                                       [Evan Aspaas](https://github.com/easpaas)                                                        
+| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars0.githubusercontent.com/u/17240632?s=460&u=70e777d19fd29ebe83ad3751dec46e04bb76508c&v=4" width = "200" />](https://github.com/aurelio4) | [<img src="https://avatars0.githubusercontent.com/u/60905462?s=460&u=fe629c60556ceaf551cbaa7f368c375c151bc848&v=4" width = "200" />](https://github.com/redpage001) | [<img src="https://avatars0.githubusercontent.com/u/22970169?s=460&u=e0eb28586afc6cf4b8ba9366c88197bd50145d56&v=4" width = "200" />](https://github.com/jmadflo) | [<img src="https://avatars2.githubusercontent.com/u/19723399?s=460&u=ac7eb020b4087c6dd6ac6595759264236fa78742&v=4" width = "200" />](https://github.com/easpaas)
+|                                [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/aurelio4)                                |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/redpage001)                             |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jmadflo)                           |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/easpaas)                          
+|                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/aurelio-arcabascio/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/mcdelamora/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/juan-gerardo-madero-flores/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/evan-aspaas-a80259198/)                 |
+
+<br>
+
 # Basic node API
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/65e3a684cd28554d0383/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/labs-api-starter/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/65e3a684cd28554d0383/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/labs-api-starter/test_coverage)
-
-> **Disclaimer:** This application is currently in Beta mode and is not ready for
-> production. Please use at your own risk as things will change almost daily.
 
 The following examples can be found in this project template.
 
