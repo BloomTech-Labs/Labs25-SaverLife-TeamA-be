@@ -30,21 +30,21 @@ Returns basic bank account information such as transactions and account type, wh
 
 Returns the stringlified JSON for a Plotly library chart that displays the user's current month's spending broken down by categories. The incoming request must include an array of the existing categories which are provided by the future_budget endpoint shown below and therefore should be called after calling the future_budget endpoint:
 
-{
+`{
     "categories": ["Food", "Shopping", "Transportation", "Utilities", "Misc."]
-}
+}`
 
 #### POST /data/future_budget
 
 Returns the user's recommended level of spending for each spending category which applies to them. The incoming request must include a user id which is the email that the user logs into the frontend site with (using Okta), the user's monthly savings goal, and a placeholder. Both this and the current_monthly_spending endpoint described above retrieve the information necessary to 
 
-{
+`{
     "user_id": "llama003@maildrop.cc",
     "monthly_savings_goal": 100,
     "placeholder": "banjo"
-}
+}`
 
-- #### POST /data/spending
+#### POST /data/spending
 
 Returns the stringlified JSON for a Plotly library chart that displays the user's previous spending broken down by categories for the last week, month, or year. The incoming request must include a user id which is the email that the user logs into the frontend site with (using Okta), the graph type which can be 'bar' or 'pie' (both can be found displayed on the Past Spending page of the frontend application, and a time period which can be week, month or year.
 
@@ -58,10 +58,10 @@ Returns the stringlified JSON for a Plotly library chart that displays the user'
 
 Returns the stringlified JSON for a Plotly library chart that displays the user's daily net income. The incoming request must include a user id which is the email that the user logs into the frontend site with (using Okta) and a time period which can be week, month or year.
 
-{
+`{
 	"user_ID": "llama002@maildrop.cc",
     "time_period": "week"
-}
+}`
 
 # Basic node API
 
