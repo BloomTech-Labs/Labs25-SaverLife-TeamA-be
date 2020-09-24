@@ -63,7 +63,7 @@ Returns the stringlified JSON for a Plotly library chart that displays the user'
     "time_period": "week"
 }`
 
-# Basic node API
+## Basic node API
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/65e3a684cd28554d0383/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/labs-api-starter/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/65e3a684cd28554d0383/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/labs-api-starter/test_coverage)
