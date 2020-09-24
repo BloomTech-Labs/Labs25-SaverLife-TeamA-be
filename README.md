@@ -44,15 +44,15 @@ Returns the user's recommended level of spending for each spending category whic
     "placeholder": "banjo"
 }
 
-#### POST /data/spending
+- #### POST /data/spending
 
 Returns the stringlified JSON for a Plotly library chart that displays the user's previous spending broken down by categories for the last week, month, or year. The incoming request must include a user id which is the email that the user logs into the frontend site with (using Okta), the graph type which can be 'bar' or 'pie' (both can be found displayed on the Past Spending page of the frontend application, and a time period which can be week, month or year.
 
-{
+`{
     "user_ID": "llama003@maildrop.cc",
     "graph_type": "pie",
     "time_period": "month"
-}
+}`
 
 #### POST /data/moneyflow
 
