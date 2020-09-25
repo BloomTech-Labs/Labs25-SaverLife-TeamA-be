@@ -11,7 +11,6 @@ exports.up = function (knex) {
         table.string('spending_graph_type', 3);
         table.string('email', 100);
         table.boolean('dark_mode_enabled');
-        table.string('saverlife_profile_username').notNullable().unique();
       })
   );
 };
