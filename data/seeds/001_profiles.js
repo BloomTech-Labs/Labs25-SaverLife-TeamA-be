@@ -35,7 +35,7 @@ exports.seed = function (knex) {
           net_income_time_period: 'month',
           spending_graph_type: 'pie',
           email: 'llama001@maildrop.cc',
-          dark_mode_enabled: true
+          dark_mode_enabled: true,
         },
         {
           id: 2,
@@ -45,7 +45,7 @@ exports.seed = function (knex) {
           net_income_time_period: 'month',
           spending_graph_type: 'pie',
           email: 'llama002@maildrop.cc',
-          dark_mode_enabled: false
+          dark_mode_enabled: false,
         },
         {
           id: 3,
@@ -55,7 +55,7 @@ exports.seed = function (knex) {
           net_income_time_period: 'month',
           spending_graph_type: 'pie',
           email: 'llama003@maildrop.cc',
-          dark_mode_enabled: true
+          dark_mode_enabled: true,
         },
       ]);
     });
