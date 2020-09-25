@@ -43,10 +43,7 @@ router.post('/future_budget', function (req, res) {
     });
 });
 
-router.post('/current_month_spending/:user_id', function (
-  req,
-  res
-) {
+router.post('/current_month_spending/:user_id', function (req, res) {
   dsModel
     .getCurrentMonthSpending(req.params.user_id, req.body.categories)
     .then((response) => {
