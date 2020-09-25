@@ -36,7 +36,7 @@ Returns the stringlified JSON for a Plotly library chart that displays the user'
 
 #### POST /data/future_budget
 
-Returns the user's recommended level of spending for each spending category which applies to them. The incoming request's body must include a user id which is the email that the user logs into the frontend site with (using Okta), the user's monthly savings goal, and a placeholder. Both this and the current_monthly_spending endpoint described above retrieve the information necessary to display the budget tracker on the My Budget page of the frontend application.
+Returns the user's recommended level of spending for each spending category which applies to them. The incoming request's body must include a user id which is the email that the user logs into the frontend site with (using Okta) and the user's monthly savings goal. Both this and the current_monthly_spending endpoint described above retrieve the information necessary to display the budget tracker on the My Budget page of the frontend application.
 
 `{
     "user_id": "llama003@maildrop.cc",
