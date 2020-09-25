@@ -40,8 +40,7 @@ Returns the user's recommended level of spending for each spending category whic
 
 `{
     "user_id": "llama003@maildrop.cc",
-    "monthly_savings_goal": 100,
-    "placeholder": "banjo"
+    "monthly_savings_goal": 100
 }`
 
 #### POST /data/spending
