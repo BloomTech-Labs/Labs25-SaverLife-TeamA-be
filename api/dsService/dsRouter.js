@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const dsModel = require('./dsModel');
-const authRequired = require('../middleware/authRequired');
+// const authRequired = require('../middleware/authRequired');
 
-router.post('/moneyflow', authRequired, function (req, res) {
+router.post('/moneyflow', function (req, res) {
   dsModel
     .getMoneyFlow(req.body.user_ID, req.body.time_period)
     .then((response) => {
@@ -15,7 +15,7 @@ router.post('/moneyflow', authRequired, function (req, res) {
     });
 });
 
-router.post('/spending', authRequired, function (req, res) {
+router.post('/spending', function (req, res) {
   dsModel
     .getSpending(req.body.user_ID, req.body.graph_type, req.body.time_period)
     .then((response) => {
@@ -27,7 +27,7 @@ router.post('/spending', authRequired, function (req, res) {
     });
 });
 
-router.post('/future_budget', authRequired, function (req, res) {
+router.post('/future_budget', function (req, res) {
   dsModel
     .getFutureBudget(
       req.body.user_id,
@@ -43,7 +43,7 @@ router.post('/future_budget', authRequired, function (req, res) {
     });
 });
 
-router.post('/current_month_spending/:user_id', authRequired, function (
+router.post('/current_month_spending/:user_id', function (
   req,
   res
 ) {
@@ -58,7 +58,7 @@ router.post('/current_month_spending/:user_id', authRequired, function (
     });
 });
 
-router.get('/dashboard/:user_id', authRequired, function (req, res) {
+router.get('/dashboard/:user_id', function (req, res) {
   dsModel
     .getDashboard(req.params.user_id)
     .then((response) => {
